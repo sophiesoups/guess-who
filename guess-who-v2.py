@@ -16,7 +16,7 @@ def ask_names(player):
 
 
 def ask_question(asker, other):
-    print(f"\n{asker}'s turn.)")
+    print(f"\n{asker}'s turn.")
     question = input("Your question: ")
     
     answers = {}
