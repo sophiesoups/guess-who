@@ -41,6 +41,22 @@ def show_results():
         two = entry["answers"][other]
         agreed = [n for n in one if n.lower() in [t.lower() for t in two]]
 
-        print()
+        print(f"\nQ{i} (asked by {asker}): {entry['question']}")
+        print(f"  {asker} thinks: {', '.join(one) or 'nobody'}")
+        print(f"  {other} thinks: {', '.join(two) or 'nobody'}")
+        print(f"  Agreed on: {', '.join(agreed) or 'nothing'}")
+
+
+turn = 0
+while True:
+    asker = players[turn % 2]
+    other = players[(turn + 1) % 2]
+    ask_question(asker, other)
+
+    if input("End the game? (y/n): ").strip().lower() == "y":
+        break
+    turn += 1
+
+show_results()
 
 
