@@ -19,4 +19,28 @@ def ask_names(player):
 def ask_question(asker, other):
     print(f"\n{asker}'s turn. Remaining characters: {', '.join(board[asker])}")
     question = input("Your question: ")
+    
+    answers = {}
+    print(f"Characters: {', '.join(characters)}")
+    answers[other] = ask_names(other) 
+    print(f"Question from {asker}: {question}")
+    print(f"Characters: {', '.join(characters)}")
+    answers[asker] = ask_names(asker)
+
+    gone = [e.lower() for e in answers[other]]
+    board[asker] = [c for c in board[asker] if c.lower() not in gone]
+
+    log.append({"asker": asker, "question": question, "answers": answers})
+
+
+def show_results():
+    for i, entry in enumerate(log, 1):
+        asker = entry["asker"]
+        other = players[1] if asker == players[0] else players[0]
+        one = entry["answers"][asker]
+        two = entry["answers"][other]
+        agreed = [n for n in one if n.lower() in [t.lower() for t in two]]
+
+        print()
+
 
