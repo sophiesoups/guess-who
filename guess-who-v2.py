@@ -38,8 +38,8 @@ def show_results():
         agreed = [n for n in one if n.lower() in [t.lower() for t in two]]
 
         print(f"\nQ{i} (asked by {asker}): {entry['question']}")
-        print(f"  {asker} thinks: {', '.join(one) or 'nobody'}")
-        print(f"  {other} thinks: {', '.join(two) or 'nobody'}")
+        print(f"  {asker} would eliminate: {', '.join(one) or 'nobody'}")
+        print(f"  {other} would eliminate: {', '.join(two) or 'nobody'}")
         print(f"  Agreed on: {', '.join(agreed) or 'nothing'}")
 
 
