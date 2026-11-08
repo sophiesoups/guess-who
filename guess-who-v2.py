@@ -7,7 +7,6 @@ characters = ["Katie", "Mike", "Farah", "Daniel", "Emma",
 
 players = ["Conor", "Sophie"]
 
-board = {p: list(characters) for p in players}
 log = []
 
 def ask_names(player):
@@ -26,9 +25,6 @@ def ask_question(asker, other):
     print(f"Question from {asker}: {question}")
     print(f"Characters: {', '.join(characters)}")
     answers[asker] = ask_names(asker)
-
-    gone = [e.lower() for e in answers[other]]
-    board[asker] = [c for c in board[asker] if c.lower() not in gone]
 
     log.append({"asker": asker, "question": question, "answers": answers})
 
