@@ -17,7 +17,7 @@ def ask_names(player):
 
 
 def ask_question(asker, other):
-    print(f"\n{asker}'s turn. Remaining characters: {', '.join(board[asker])}")
+    print(f"\n{asker}'s turn.)")
     question = input("Your question: ")
     
     answers = {}
