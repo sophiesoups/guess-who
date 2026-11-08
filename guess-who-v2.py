@@ -20,10 +20,8 @@ def ask_question(asker, other):
     question = input("Your question: ")
     
     answers = {}
-    print(f"Characters: {', '.join(characters)}")
     answers[other] = ask_names(other) 
     print(f"Question from {asker}: {question}")
-    print(f"Characters: {', '.join(characters)}")
     answers[asker] = ask_names(asker)
 
     log.append({"asker": asker, "question": question, "answers": answers})
